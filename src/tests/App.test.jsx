@@ -3,14 +3,14 @@ import App from '../App';
 import { render, screen } from '@testing-library/react';
 
 
-describe('something truthy and falsy', ()=>{
-    it('true to be true', ()=>{
-        expect(true).toBe(true);
+describe('App component', ()=>{
+    it('renders correct heading', ()=>{
+        render(<App/>)
+
+        expect(screen.getByRole("heading").textContent).toMatch(/our first test/i)
     });
 
-    it('false to be false', ()=>{
-        expect(false).toBe(false);
-    })
+   
 })
 
 describe('App', () => {
